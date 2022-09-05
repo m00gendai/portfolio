@@ -1,4 +1,4 @@
-import Component_MainNavMenu from "./Component_MainNavMenu"
+import Component_MainNavMenu from "../components/MainNavMenu"
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {

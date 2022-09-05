@@ -11,9 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <section id={styles.section_welcome}>
-          hello
-        </section>
+          Home
       </main>
 
       <footer className={styles.footer}>
