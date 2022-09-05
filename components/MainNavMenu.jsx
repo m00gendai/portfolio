@@ -5,30 +5,30 @@ function Component_MainNavMenu(){
     return(
         <nav className={styles.navbar}>
             <ul className={styles.navbarList}>
-                <li>
+                <li className={styles.navbarItem}>
                     <Link href="/">
-                        <a>
+                        <a className={styles.navbarItemLink}>
                             Home
                         </a>
                     </Link>
                 </li>
-                <li>
+                <li className={styles.navbarItem}>
                     <Link href="/projekte">
-                        <a>
+                        <a className={styles.navbarItemLink}>
                             Projekte
                         </a>
                     </Link>
                 </li>
-                <li>
+                <li className={styles.navbarItem}>
                     <Link href="/uber_mich">
-                        <a>
+                        <a className={styles.navbarItemLink}>
                             Über Mich
                         </a>
                     </Link>
                 </li>
-                <li>
+                <li className={styles.navbarItem}>
                     <Link href="/kontakt">
-                        <a>
+                        <a className={styles.navbarItemLink}>
                             Kontakt
                         </a>
                     </Link>

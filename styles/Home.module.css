@@ -1,15 +1,20 @@
 .container {
-  padding: 0 2rem;
+  padding: 0;
+  background: lightblue;
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("../public/earth-1756274_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #section_welcome{
