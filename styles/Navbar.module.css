@@ -12,6 +12,7 @@
     flex-wrap: nowrap;
     margin: 0;
     padding: 0;
+    z-index: 200;
 }
 
 .navbarList{

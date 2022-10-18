@@ -1,39 +1,3 @@
-.container {
-  padding: 0;
-  background: lightblue;
-}
 
-.main {
-  min-height: 100vh;
-  padding: 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url("../public/earth-1756274_1920.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
-#section_welcome{
-  background: blue;
-}
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
 
