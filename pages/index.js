@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import s from '../styles/Home.module.css'
+import PricingTable from "../components/PricingTable"
 
 export default function Home() {
 
@@ -15,7 +16,7 @@ export default function Home() {
       </Head>
       <main className="main" style={{backgroundImage: `url("${background}")`}}>
         <section className="section">
-          <p>Home</p>
+                          <PricingTable />
         </section>
       </main>
     </>
