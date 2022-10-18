@@ -20,6 +20,13 @@ function Component_MainNavMenu(){
                     </Link>
                 </li>
                 <li className={styles.navbarItem}>
+                    <Link href="/angebote">
+                        <a className={styles.navbarItemLink}>
+                            Angebote
+                        </a>
+                    </Link>
+                </li>
+                <li className={styles.navbarItem}>
                     <Link href="/uber_mich">
                         <a className={styles.navbarItemLink}>
                             Über Mich
