@@ -35,6 +35,7 @@ p{
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .section{
@@ -45,6 +46,19 @@ p{
   justify-content: center;
   margin: 5rem 0 0 0;
   align-items: flex-start;
+}
+
+.splash{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
 }
 
 .footer {
