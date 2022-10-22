@@ -1,0 +1,41 @@
+.headerWrapper{
+    width: 100%;
+    position: relative;
+    height: 3rem;
+    margin: 0 0 2rem 0;
+}
+
+.h2{
+    position: absolute;
+    left: -10%;
+    top: 0;
+    text-align: left;
+    padding-left: 10%;
+    background: blue;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.h3{
+    background-color: #0beef9;
+        background-image: linear-gradient(315deg, #0beef9 0%, #48a9fe 74%);
+    margin-bottom: 0;
+    padding: 1rem;
+    position: relative;
+    user-select: none;
+}
+.h3:hover{
+    cursor: pointer;
+}
+
+.h3 span{
+    position: absolute;
+    right: 1rem;
+}
+
+.spoiler{
+    border: 1px solid aqua;
+    padding: 1rem;
+}
