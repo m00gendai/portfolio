@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from "next/Link"
 import s from '../styles/Home.module.css'
 import PricingTable from "../components/PricingTable"
 import {useState, useEffect} from "react"
@@ -24,7 +25,7 @@ const [prefix, setPrefix] = useState("Vereins")
         
           <article className="splash" style={{backgroundImage: `url("${background}")`}}>
                           <span className="splashSpan">{`Ihre neue ${prefix}webseite?`}</span>
-                          <button className="callToAction"><a href="/angebote">Angebote</a></button>
+                          <button className="callToAction">Angebote</button>
                         </article>
                         <section className="section">
                           <PricingTable />
