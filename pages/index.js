@@ -7,11 +7,13 @@ import {useState, useEffect} from "react"
 export default function Home() {
 
   const prefixes = ["Vereins", "Club", "Betriebs", "Geschäfts", "Hobby", "Projekt"]
-const [prefix, setPrefix] = useState(prefixes[Math.floor((Math.random()*prefixes.length)+1)])
+  // prefixes[Math.floor((Math.random()*prefixes.length)+1)]
+const [prefix, setPrefix] = useState("Vereins")
 
 
-  const background = "https://cdn.pixabay.com/photo/2020/04/08/16/32/keyboard-5017973_960_720.jpg"
-  return (
+  const background = "/laptop-ga99e6e23c_1920.jpg"
+
+  return(
     <>
       <Head>
         <title>mrweber Portfolio</title>
@@ -21,7 +23,8 @@ const [prefix, setPrefix] = useState(prefixes[Math.floor((Math.random()*prefixes
       <main className="main" >
         
           <article className="splash" style={{backgroundImage: `url("${background}")`}}>
-                          {`Ihre neue ${prefix}webseite?`}
+                          <span className="splashSpan">{`Ihre neue ${prefix}webseite?`}</span>
+                          <button className="callToAction"><a href="/angebote">Angebote</a></button>
                         </article>
                         <section className="section">
                           <PricingTable />
