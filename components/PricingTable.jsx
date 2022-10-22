@@ -11,15 +11,7 @@ function PricingTable() {
             <div className={s.table} key={`table_${index}`}>
               <div className={s.tableInner}>
                 <h2>{p.option}</h2>
-                <div className={s.optionCntainer}>
-                  <div
-                    className={s.option}
-                    style={{
-                      backgroundImage: `url(${p.img})`,
-                      backgroundColor: 'aqua',
-                    }}
-                  ></div>
-                </div>
+                
                 <div className={s.price}>{p.price}</div>
                 <div className={s.content}>
                   <ul>
