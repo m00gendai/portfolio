@@ -6,7 +6,6 @@ function PricingTable() {
   return (
       <div className={s.container}>
         {pricing.map((p, index) => {
-          console.log(p.items);
           return (
             <div className={s.table} key={`table_${index}`}>
               <div className={s.tableInner}>
