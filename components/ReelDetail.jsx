@@ -21,7 +21,17 @@ function ReelDetail(props){
                 gridColumnEnd: gridCol+1
             }}
         >
-            {site.name}
+            <div 
+                className={s.bigImage}
+                style={{
+                    backgroundImage: `url("${site.image}")`
+                }}
+            ></div>
+            <div className={s.bigText}>
+                <h2>{site.name}</h2>
+                <p>{site.description}</p>
+                <p>{site.detail}</p>
+            </div>
         </div>
     )
 }
