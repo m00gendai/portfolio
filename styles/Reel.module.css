@@ -32,7 +32,6 @@
 }
 
 .bigText{
-    width: 60%;
     display: flex;
     justify-content: flex-start;
     align-content: flex-start;
@@ -40,4 +39,20 @@
     background: white;
     height: 100%;
     padding: 1rem;
+}
+
+@media (orientation: landscape) {
+    .bigText{
+        width: 60%;
+    }
+}
+
+@media (orientation: portrait) {
+    .bigImage {
+        display: none;
+    }
+
+    .bigText {
+        width: 100%;
+    }
 }
