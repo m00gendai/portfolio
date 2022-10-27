@@ -18,7 +18,6 @@ function Reel(){
         const gridMeasurement = [cols, rows]
         setGrid(gridMeasurement)
         setIndx(index)
-
         if(!open){
             setOpen(true)
         }
@@ -37,7 +36,6 @@ function Reel(){
                     style={{
                         backgroundImage: `url("${project.image}")`
                     }}
-                    value={project.name}
                     onClick={(e)=>handleClick(e, index)}>
             </div>
             

@@ -1,4 +1,7 @@
 import s from "../styles/Reel.module.css"
+import Image from "next/image"
+import Link from "next/link"
+import LaunchIcon from '@mui/icons-material/Launch';
 
 function ReelDetail(props){
     const gridCol = props.grid[0]
@@ -21,16 +24,30 @@ function ReelDetail(props){
                 gridColumnEnd: gridCol+1
             }}
         >
-            <div 
+            {/*<div 
                 className={s.bigImage}
                 style={{
                     backgroundImage: `url("${site.image}")`
                 }}
-            ></div>
+            ></div> */}
             <div className={s.bigText}>
-                <h2>{site.name}</h2>
+                <Link href={site.url}><a target="_blank"><h2><span className={s.span}>{site.name}</span><LaunchIcon /></h2></a></Link>
                 <p>{site.description}</p>
-                <p>{site.detail}</p>
+                <p>{site.detail.map(detail =>{
+                    return <p className={s.bigTextP}>{detail}</p>
+                })}</p>
+                <div className={s.tech}>
+                {site.tech.map((stack, index) => {
+                    if(stack == "woltlab"){
+                        return <Image src={`/${stack}.png`} height={50} width={100} />
+                    } 
+                    if(stack == "next"){
+                        return <div className={s.wNext}><Image src={`/${stack}.svg`} height={50} width={50} /></div>
+                    } else {
+                    return <Image src={`/${stack}.svg`} height={50} width={50} />
+                    }
+                })}
+                </div>
             </div>
         </div>
     )
