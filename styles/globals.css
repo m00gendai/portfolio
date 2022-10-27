@@ -23,11 +23,10 @@ p{
   width: 100%;
 }
 
-.main{
+.main, .mainFront{
   min-height: 100vh;
   width: 100%;
   padding: 0;
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -39,15 +38,24 @@ p{
   overflow-x: hidden;
 }
 
-.section{
+.mainFront{
+  z-index: -2;
+}
+
+.section, .sectionFront{
   width: 90%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 5rem 0 0 0;
+  margin: 5rem 0 5rem 0;
   align-items: flex-start;
   position: relative;
+}
+
+.sectionFront{
+  height: 100vh;
+  align-items: center;
 }
 
 .splash{
