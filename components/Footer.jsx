@@ -1,4 +1,5 @@
 import s from "../styles/Footer.module.css"
+import { icons } from "../lib/social_info"
 
 function Footer(){
 
@@ -8,7 +9,14 @@ function Footer(){
 
     return(
         <footer className={s.footer}>
-        © mrweber.ch {foundingYear == currentYear ? "2022" : `2022 - ${currentYear}`}
+            <div className={s.social}>
+                {icons.map((icon, index) =>{
+                    return <div key={`socialIcon${index}`} className={s.socialIcon} title={icon.name} style={{
+                        backgroundImage: `url("${icon.image}")`,
+                    }}></div>
+                })}
+            </div>
+        <div className={s.copy}>© mrweber.ch {foundingYear == currentYear ? "2022" : `2022 - ${currentYear}`}</div>
       </footer>
     )
 }
