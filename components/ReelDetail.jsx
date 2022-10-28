@@ -14,7 +14,6 @@ function ReelDetail(props){
     const rowPosition = Math.floor(index/gridCol)+1
     const colPosition = (index%gridCol)+1 // This is not really used but fun to know anyways
 
-
     return(
         <div 
             className={`${s.bigScreen} ${fadeIn ? s.fadeIn : s.fadeOut}`}
@@ -49,10 +48,9 @@ function ReelDetail(props){
                 <div className={s.tech}>
                 {site.tech.map((stack, index) => {
                     if(stack.name == "woltlab"){
-                        return <Link href={stack.link}>
+                        return <Link key={`techstack_${index}`} href={stack.link}>
                                 <a target="_blank">
-                                    <Image 
-                                        key={`techstack_${index}`} 
+                                    <Image   
                                         src={`/${stack.name}.png`} 
                                         title={stack.nameDetail} 
                                         height={50} 
@@ -62,9 +60,9 @@ function ReelDetail(props){
                             </Link>
                     } 
                     if(stack.name == "next"){
-                        return <Link href={stack.link}>
+                        return <Link key={`techstack_${index}`} href={stack.link}>
                                 <a target="_blank">
-                                    <div className={s.wNext} key={`techstack_${index}`}>
+                                    <div className={s.wNext} >
                                         <Image 
                                             src={`/${stack.name}.svg`} 
                                             title={stack.nameDetail} 
@@ -75,10 +73,9 @@ function ReelDetail(props){
                                 </a>
                             </Link>
                     } else {
-                        return <Link href={stack.link}>
+                        return <Link key={`techstack_${index}`} href={stack.link}>
                             <a target="_blank">
                                 <Image 
-                                    key={`techstack_${index}`} 
                                     src={`/${stack.name}.svg`} 
                                     title={stack.nameDetail} 
                                     height={50} 
