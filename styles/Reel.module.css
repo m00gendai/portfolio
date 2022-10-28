@@ -16,6 +16,10 @@
     background-repeat: no-repeat;
 }
 
+.tile:hover{
+    cursor: pointer;
+}
+
 .bigScreen{
     width: 100vw;
     position: relative;
@@ -24,14 +28,39 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    transform: translateX(-100%);
 }
 
-.bigImage{
-    width: 40%;
-    aspect-ratio: 16/9;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.fadeIn{
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.fadeOut{
+    animation-name: fadeOut;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.89, .44, .45, 1.32);
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 .bigText{
@@ -42,13 +71,20 @@
     background: rgba(0,0,0,0.7);
     height: 100%;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 2rem 1rem 2rem;
     color: white;
 }
 
 .bigText h2{
     display: flex;
     align-items: center;
+    transition: 250ms;
+    margin: 0 0 1rem 0;
+}
+
+.bigText h2:hover{
+    cursor: pointer;
+    color: deeppink;
 }
 
 .span{
@@ -56,8 +92,7 @@
 }
 
 .wNext{
-    background: white;
-    border-radius: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,4 +108,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
     grid-gap: 1rem;
+    margin: 2rem 0 0 0;
 }
+

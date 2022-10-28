@@ -10,6 +10,7 @@ function Reel(){
     const [proj, setProj] = useState("")
     const [indx, setIndx] = useState(0)
     const [grid, setGrid] = useState([])
+    const [fadeIn, setFadeIn] = useState(true)
 
 
     function handleClick(e, index){
@@ -20,9 +21,15 @@ function Reel(){
         setIndx(index)
         if(!open){
             setOpen(true)
+            setFadeIn(true)
         }
         if(open && indx == index){
-            setOpen(!open)
+            setFadeIn(!fadeIn)
+            setTimeout(function(){
+setOpen(!open)
+            },500)
+            
+            
         }
         setProj(projects[index].name)
     }
@@ -41,7 +48,7 @@ function Reel(){
             
        })}
        {open?
-                <ReelDetail index={indx} project={projects[indx]} grid={grid == [] ? gridMeasurement : grid} />:null}
+                <ReelDetail fadeIn={fadeIn} index={indx} project={projects[indx]} grid={grid == [] ? gridMeasurement : grid} />:null}
         </div>
     )
 }

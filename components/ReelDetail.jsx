@@ -4,6 +4,7 @@ import Link from "next/link"
 import LaunchIcon from '@mui/icons-material/Launch';
 
 function ReelDetail(props){
+    const fadeIn = props.fadeIn
     const gridCol = props.grid[0]
     const gridRow = props.grid[1] // This is not really used but fun to know anyways
     const site = props.project
@@ -16,7 +17,7 @@ function ReelDetail(props){
 
     return(
         <div 
-            className={s.bigScreen}
+            className={`${s.bigScreen} ${fadeIn ? s.fadeIn : s.fadeOut}`}
             style={{
                 gridRowStart: rowPosition+1,
                 gridRowEnd: rowPosition+2,
@@ -31,20 +32,60 @@ function ReelDetail(props){
                 }}
             ></div> */}
             <div className={s.bigText}>
-                <Link href={site.url}><a target="_blank"><h2><span className={s.span}>{site.name}</span><LaunchIcon /></h2></a></Link>
+                <Link href={site.url}>
+                    <a target="_blank">
+                        <h2>
+                            <span className={s.span}>
+                                {site.name}
+                            </span>
+                            <LaunchIcon />
+                        </h2>
+                    </a>
+                </Link>
                 <p>{site.description}</p>
                 {site.detail.map((detail, index) =>{
                     return <p key={`detailParagraph_${index}`} className={s.bigTextP}>{detail}</p>
                 })}
                 <div className={s.tech}>
                 {site.tech.map((stack, index) => {
-                    if(stack == "woltlab"){
-                        return <Image key={`techstack_${index}`} src={`/${stack}.png`} height={50} width={100} />
+                    if(stack.name == "woltlab"){
+                        return <Link href={stack.link}>
+                                <a target="_blank">
+                                    <Image 
+                                        key={`techstack_${index}`} 
+                                        src={`/${stack.name}.png`} 
+                                        title={stack.nameDetail} 
+                                        height={50} 
+                                        width={100} 
+                                    />
+                                </a>
+                            </Link>
                     } 
-                    if(stack == "next"){
-                        return <div className={s.wNext} key={`techstack_${index}`}><Image src={`/${stack}.svg`} height={50} width={50} /></div>
+                    if(stack.name == "next"){
+                        return <Link href={stack.link}>
+                                <a target="_blank">
+                                    <div className={s.wNext} key={`techstack_${index}`}>
+                                        <Image 
+                                            src={`/${stack.name}.svg`} 
+                                            title={stack.nameDetail} 
+                                            height={50} 
+                                            width={50} 
+                                        />
+                                    </div>
+                                </a>
+                            </Link>
                     } else {
-                    return <Image key={`techstack_${index}`} src={`/${stack}.svg`} height={50} width={50} />
+                        return <Link href={stack.link}>
+                            <a target="_blank">
+                                <Image 
+                                    key={`techstack_${index}`} 
+                                    src={`/${stack.name}.svg`} 
+                                    title={stack.nameDetail} 
+                                    height={50} 
+                                    width={50} 
+                                />
+                            </a>
+                        </Link>
                     }
                 })}
                 </div>
