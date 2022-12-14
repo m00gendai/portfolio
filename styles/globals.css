@@ -21,6 +21,8 @@ h1,h2,h3,h4,h5,h6{
 
 p{
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .main, .mainFront{
@@ -50,6 +52,7 @@ p{
   justify-content: center;
   margin: 5rem 0 5rem 0;
   align-items: flex-start;
+  align-content: flex-start;
   position: relative;
 }
 
