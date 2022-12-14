@@ -12,7 +12,6 @@ function Reel(){
     const [grid, setGrid] = useState([])
     const [fadeIn, setFadeIn] = useState(true)
 
-
     function handleClick(e, index){
         const cols= window.getComputedStyle(e.target.parentNode).gridTemplateColumns.split(" ").length
         const rows = window.getComputedStyle(e.target.parentNode).gridTemplateRows.split(" ").length
@@ -22,14 +21,20 @@ function Reel(){
         if(!open){
             setOpen(true)
             setFadeIn(true)
+            setTimeout(function(){
+                document.getElementById("bigscreen").scrollIntoView({behavior: "smooth", block: "center", inline: "center"})
+            },500)
         }
         if(open && indx == index){
             setFadeIn(!fadeIn)
             setTimeout(function(){
-setOpen(!open)
+                setOpen(!open)
             },500)
-            
-            
+        }
+        if(open && indx != index){
+            setTimeout(function(){
+                document.getElementById("bigscreen").scrollIntoView({behavior: "smooth", block: "center", inline: "center"})
+            },500)
         }
         setProj(projects[index].name)
     }

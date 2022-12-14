@@ -16,7 +16,7 @@ function ReelDetail(props){
 
     return(
         <div 
-            className={`${s.bigScreen} ${fadeIn ? s.fadeIn : s.fadeOut}`}
+            className={`${s.bigScreen} ${fadeIn ? s.fadeIn : s.fadeOut}`} id="bigscreen"
             style={{
                 gridRowStart: rowPosition+1,
                 gridRowEnd: rowPosition+2,
@@ -55,6 +55,18 @@ function ReelDetail(props){
                                         title={stack.nameDetail} 
                                         height={50} 
                                         width={100} 
+                                    />
+                                </a>
+                            </Link>
+                    } 
+                    if(stack.name == "nodemailer"){
+                        return <Link key={`techstack_${index}`} href={stack.link}>
+                                <a target="_blank">
+                                    <Image   
+                                        src={`/${stack.name}.png`} 
+                                        title={stack.nameDetail} 
+                                        height={50} 
+                                        width={74} 
                                     />
                                 </a>
                             </Link>
