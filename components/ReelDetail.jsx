@@ -43,7 +43,7 @@ function ReelDetail(props){
                 </Link>
                 <p>{site.description}</p>
                 {site.detail.map((detail, index) =>{
-                    return <p key={`detailParagraph_${index}`} className={s.bigTextP}>{detail}</p>
+                    return <p key={`detailParagraph_${index}`} className={s.bigTextP}>{detail == "" ? <br /> : detail}</p>
                 })}
                 <div className={s.tech}>
                 {site.tech.map((stack, index) => {
